@@ -237,31 +237,6 @@ a {
   color: var(--white);
 }
 
-/* Hero decoration (soccer ball) */
-.hero-decoration {
-  position: absolute;
-  right: 0;
-  top: 183px;
-  width: 221px;
-  height: 209px;
-  border-radius: 50%;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.hero-deco-bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-deco-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, transparent 100%);
-}
-
 /* ===== Decorative Flip Icons ===== */
 .flip-deco {
   position: absolute;
@@ -417,6 +392,7 @@ a {
 .you-get-bg img {
   position: absolute;
   width: 245%;
+  max-width: none;
   height: 284%;
   top: -73%;
   left: -78%;
@@ -1596,10 +1572,6 @@ a {
 
   .footer-email-input {
     font-size: 32px;
-  }
-
-  .hero-decoration {
-    display: none;
   }
 }
 
