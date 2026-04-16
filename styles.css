@@ -378,6 +378,8 @@ a {
 .whatyouget-section {
   position: relative;
   padding: 80px 0;
+  backdrop-filter: blur(4px);
+  isolation: isolate;
 }
 
 .whatyouget-section .container {
@@ -389,6 +391,10 @@ a {
   padding: 0 clamp(24px, 17.36vw, 300px);
 }
 
+.card-wrapper {
+  position: relative;
+}
+
 .you-get-card {
   position: relative;
   display: flex;
@@ -396,15 +402,16 @@ a {
   padding: 32px 0 48px;
   gap: 56px;
   border-radius: 16px;
-  overflow: hidden;
-  border: 2px solid rgba(255, 255, 255, 0.5);
   min-height: 399px;
+  z-index: 0;
 }
 
 .you-get-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
+  overflow: hidden;
+  border-radius: 16px;
 }
 
 .you-get-bg img {
@@ -419,7 +426,7 @@ a {
 .you-get-bg-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 70% at 44% 41%, rgba(0, 0, 0, 0.4) 0%, transparent 100%);
+  background: radial-gradient(ellipse 41.29% 93.85% at 44.51% 40.91%, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 .you-get-glow {
@@ -535,9 +542,10 @@ a {
 
 .check-item-light span {
   color: var(--grey-950);
+  font-weight: 400;
 }
 
-/* Phone mockup images on you-get card */
+/* Phone mockup images — sibling of card, positioned over it */
 .you-get-images {
   position: absolute;
   right: 0;
@@ -605,7 +613,7 @@ a {
   gap: 56px;
   background: var(--grey-50);
   border-radius: 16px;
-  overflow: hidden;
+  z-index: 2;
 }
 
 .audience-header {
@@ -649,7 +657,7 @@ a {
   white-space: nowrap;
 }
 
-/* Treasure chest decoration */
+/* Treasure chest decoration — sibling of card, positioned over it */
 .audience-decoration {
   position: absolute;
   right: 32px;
@@ -658,7 +666,7 @@ a {
   width: 423px;
   height: 290px;
   pointer-events: none;
-  z-index: 1;
+  z-index: 3;
 }
 
 .treasure-chest {
