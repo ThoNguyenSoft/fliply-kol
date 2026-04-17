@@ -618,7 +618,7 @@ a {
   bottom: 0;
   width: 100%;
   height: 274px;
-  z-index: 1;
+  z-index: 4;
 }
 
 .you-get-coins img {
@@ -774,7 +774,7 @@ a {
 
 /* Purple coins clustered bottom-right in front of podium */
 .treasure-coin-1 {
-  right: 10px;
+  right: 40px;
   top: 170px;
   transform: rotate(-6deg);
   width: 105px;
@@ -783,7 +783,7 @@ a {
 }
 
 .treasure-coin-2 {
-  right: 70px;
+  right: 100px;
   top: 175px;
   transform: rotate(8deg);
   width: 100px;
@@ -792,7 +792,7 @@ a {
 }
 
 .treasure-coin-3 {
-  right: 130px;
+  right: 160px;
   top: 180px;
   transform: rotate(-10deg);
   width: 95px;
@@ -1264,6 +1264,10 @@ a {
 .need-section {
   position: relative;
   overflow: hidden;
+  min-height: 536px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .need-bg {
@@ -1274,11 +1278,12 @@ a {
 
 .need-bg img {
   position: absolute;
-  width: 123%;
-  height: 272%;
-  top: -128%;
-  left: -12%;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
   object-fit: cover;
+  object-position: center;
 }
 
 .need-overlay {
@@ -1296,9 +1301,11 @@ a {
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  max-width: 936px;
+  width: 936px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 120px 24px;
+  padding: 120px 0;
+  box-sizing: border-box;
 }
 
 .need-section h2 {
@@ -1312,7 +1319,7 @@ a {
 
 .need-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
   width: 100%;
 }
@@ -1443,11 +1450,13 @@ a {
 
 .footer-signup {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
 }
 
 .footer-signup-label {
+  flex: 1;
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -1494,6 +1503,7 @@ a {
   flex-shrink: 0;
   width: 190px;
   height: 72px;
+  text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -1705,7 +1715,7 @@ a {
   .hero-football-right-blur {
     content: url("assets/decorations/football-mobile-sharp-top.png");
     top: 50px;
-    right: 16px;
+    right: 0;
     left: auto;
     bottom: auto;
     width: 61px;
@@ -2208,6 +2218,8 @@ a {
     width: 100%;
   }
   .footer-signup {
+    flex-direction: column;
+    align-items: stretch;
     gap: 24px;
   }
   .footer-signup-label {
