@@ -162,6 +162,41 @@ a {
   background: radial-gradient(ellipse 65% 70% at 47% 26%, rgba(23, 0, 50, 0.4) 23.56%, rgba(11, 0, 25, 0.5) 61.78%, transparent 100%);
 }
 
+/* Green grass strip at hero bottom */
+.hero-grass-strip {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 96px;
+  object-fit: cover;
+  display: block;
+  z-index: 1;
+}
+
+/* Hero 3D football decorations: 2 blurred (left-mid, right-mid) + 1 sharp (bottom-right) */
+.hero-football {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  height: auto;
+}
+.hero-football-left-blur {
+  top: 180px;
+  left: 0;
+  width: 174px;
+}
+.hero-football-right-blur {
+  top: 260px;
+  right: 0;
+  width: 98px;
+}
+.hero-football-botright {
+  bottom: 30px;
+  right: 180px;
+  width: 222px;
+}
+
 .hero-content {
   position: relative;
   z-index: 2;
@@ -224,6 +259,12 @@ a {
 }
 
 .btn-hero {
+  width: 341px;
+  height: 64px;
+  max-width: 100%;
+}
+
+.btn-cta {
   width: 482px;
   height: 80px;
   max-width: 100%;
@@ -232,9 +273,13 @@ a {
 .btn-primary span {
   font-family: 'Unbounded', sans-serif;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 24px;
   line-height: 1.2;
   color: var(--white);
+}
+
+.btn-cta span {
+  font-size: 36px;
 }
 
 /* ===== Decorative Flip Icons ===== */
@@ -521,63 +566,66 @@ a {
   font-weight: 400;
 }
 
-/* Phone mockup images — sibling of card, positioned over it */
+/* "What You Get" decorative images — cosmic star + MEGAPOT + coins */
 .you-get-images {
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 573px;
-  height: 437px;
+  height: 500px;
   z-index: 1;
   pointer-events: none;
 }
 
-.phone-mockup {
+.you-get-star {
   position: absolute;
-  border-radius: 8px;
-  overflow: hidden;
+  left: -10px;
+  top: -10px;
+  width: 280px;
+  height: auto;
+  z-index: 2;
 }
 
-.phone-mockup img {
+.you-get-star img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 30px rgba(123, 82, 198, 0.35));
+}
+
+.you-get-megapot {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 323px;
+  height: 406px;
+  z-index: 3;
+  transform: rotate(6deg);
+}
+
+.you-get-megapot img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 20px 40px rgba(11, 0, 25, 0.25));
 }
 
-.phone-mockup-1 {
-  left: 70px;
-  top: 27px;
-  width: 217px;
-  height: 463px;
-  transform: rotate(-6.37deg);
-}
-
-.phone-mockup-2 {
-  left: 276px;
-  top: -5px;
-  width: 268px;
-  height: 368px;
-  transform: rotate(9.62deg);
-  border-radius: 8px;
-}
-
-.phone-mockup-crowd {
+.you-get-coins {
   position: absolute;
   left: 0;
-  top: 163px;
-  width: 573px;
+  bottom: 0;
+  width: 100%;
   height: 274px;
-  border-radius: 16px;
-  overflow: hidden;
+  z-index: 1;
 }
 
-.phone-mockup-crowd img {
-  width: 166%;
-  height: 164%;
-  object-fit: cover;
-  margin-left: -25%;
-  margin-top: 10%;
+.you-get-coins img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 /* ===== Audience Gets ===== */
@@ -698,56 +746,83 @@ a {
   z-index: 4;
 }
 
-.treasure-coin {
+.treasure-crown-side {
   position: absolute;
-  object-fit: cover;
+  object-fit: contain;
+  z-index: 4;
 }
 
+.treasure-crown-left {
+  left: 8px;
+  top: 85px;
+  width: 102px;
+  height: 71px;
+}
+
+.treasure-crown-right {
+  right: 5px;
+  top: 80px;
+  width: 108px;
+  height: 75px;
+}
+
+.treasure-coin {
+  position: absolute;
+  object-fit: contain;
+  z-index: 6;
+}
+
+/* Purple coins clustered bottom-right in front of podium */
 .treasure-coin-1 {
-  right: 55px;
-  top: 128px;
-  transform: rotate(-7deg);
-  width: 97px;
-  height: 97px;
+  right: 10px;
+  top: 170px;
+  transform: rotate(-6deg);
+  width: 105px;
+  height: 105px;
+  z-index: 5;
 }
 
 .treasure-coin-2 {
-  left: 145px;
-  top: 148px;
-  transform: rotate(15deg);
-  width: 80px;
-  height: 80px;
-  z-index: 2;
+  right: 70px;
+  top: 175px;
+  transform: rotate(8deg);
+  width: 100px;
+  height: 100px;
+  z-index: 6;
 }
 
 .treasure-coin-3 {
-  right: 105px;
-  top: 155px;
-  transform: rotate(-12deg);
-  width: 72px;
-  height: 72px;
-  z-index: 3;
+  right: 130px;
+  top: 180px;
+  transform: rotate(-10deg);
+  width: 95px;
+  height: 95px;
+  z-index: 7;
 }
 
 .treasure-voucher {
   position: absolute;
   object-fit: contain;
+  z-index: 5;
 }
 
+/* Orange vouchers stacked bottom-left in front of podium */
 .treasure-voucher-1 {
-  left: 93px;
-  top: 138px;
-  width: 112px;
-  height: 112px;
-  transform: rotate(-15deg);
+  left: 90px;
+  top: 168px;
+  width: 118px;
+  height: 125px;
+  transform: rotate(-8deg);
+  z-index: 6;
 }
 
 .treasure-voucher-2 {
-  left: 28px;
-  top: 142px;
-  width: 112px;
-  height: 112px;
-  transform: rotate(-25deg);
+  left: 40px;
+  top: 175px;
+  width: 118px;
+  height: 125px;
+  transform: rotate(-18deg);
+  z-index: 5;
 }
 
 /* ===== How It Works ===== */
@@ -1066,20 +1141,20 @@ a {
 .trophy-crown {
   position: absolute;
   left: 50%;
-  top: 0;
+  top: 30px;
   transform: translateX(-50%);
-  width: 191px;
-  height: 191px;
-  overflow: hidden;
-  border-radius: 50%;
+  width: 180px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  filter: drop-shadow(0 10px 20px rgba(123, 82, 198, 0.3));
 }
 
 .trophy-crown img {
-  width: 330%;
-  height: 220%;
-  object-fit: cover;
-  margin-left: -10%;
-  margin-top: -58%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 /* Discover tournaments link */
@@ -1296,6 +1371,18 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Confetti ribbon overlay for CTA section */
+.cta-confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .cta-content {
@@ -1598,8 +1685,38 @@ a {
     min-height: 449px;
     overflow: hidden;
   }
+  .hero-bg-img {
+    content: url("assets/backgrounds/hero-bg-mobile.png");
+  }
   .hero-bg-overlay {
     background: radial-gradient(ellipse 50% 50% at 50% 30%, rgba(23, 0, 50, 0.3) 0%, rgba(11, 0, 25, 0.4) 60%, transparent 100%);
+  }
+  /* Mobile hero footballs: left-mid blur + top-right sharp + bottom-right sharp */
+  .hero-grass-strip { height: 48px; }
+  .hero-football-left-blur {
+    content: url("assets/decorations/football-3d-mobile-right.png");
+    top: 160px;
+    left: 0;
+    right: auto;
+    bottom: auto;
+    width: 38px;
+    height: auto;
+  }
+  .hero-football-right-blur {
+    content: url("assets/decorations/football-mobile-sharp-top.png");
+    top: 50px;
+    right: 16px;
+    left: auto;
+    bottom: auto;
+    width: 61px;
+    height: auto;
+  }
+  .hero-football-botright {
+    content: url("assets/decorations/football-3d-mobile-left.png");
+    bottom: 20px;
+    right: 16px;
+    width: 67px;
+    height: auto;
   }
   .hero-content {
     padding: 0 16px;
@@ -1642,11 +1759,11 @@ a {
   }
 
   .why-section {
-    padding: 24px 16px 40px;
+    padding: 16px 16px 24px;
   }
   .why-section .container {
     padding: 0;
-    gap: 32px;
+    gap: 24px;
     max-width: 361px;
   }
   .why-section .section-header { gap: 8px; }
@@ -1690,7 +1807,7 @@ a {
   }
 
   .whatyouget-section {
-    padding: 0 16px;
+    padding: 16px 16px 24px;
     backdrop-filter: none;
   }
   .whatyouget-section .container {
@@ -1701,8 +1818,8 @@ a {
   .card-wrapper { width: 100%; }
 
   .you-get-card {
-    padding: 24px 0 32px;
-    gap: 32px;
+    padding: 28px 0 32px;
+    gap: 28px;
     min-height: 280px;
     width: 100%;
     overflow: hidden;
@@ -1755,8 +1872,8 @@ a {
   }
 
   .audience-card {
-    padding: 24px 0 32px;
-    gap: 32px;
+    padding: 28px 0 32px;
+    gap: 28px;
     width: 100%;
   }
   .audience-header {
@@ -1951,15 +2068,14 @@ a {
   }
   .trophy-crown {
     left: 50%;
-    top: 0;
-    width: 83px;
-    height: 83px;
+    top: 14px;
+    width: 80px;
+    height: auto;
   }
   .trophy-crown img {
-    width: 330%;
-    height: 220%;
-    margin-left: -10%;
-    margin-top: -58%;
+    width: 100%;
+    height: auto;
+    margin: 0;
   }
 
   .discover-link {
@@ -2055,8 +2171,9 @@ a {
   }
 
   .cta-section {
-    padding: 80px 16px;
+    padding: 56px 16px;
     min-height: 306px;
+    height: 306px;
   }
   .cta-bg {
     width: 100%;
@@ -2075,18 +2192,18 @@ a {
   }
 
   .footer {
-    padding: 32px 16px;
+    padding: 40px 16px;
     min-height: auto;
   }
   .footer .container {
     flex-direction: column;
-    gap: 32px;
+    gap: 40px;
     padding: 0;
     max-width: 361px;
   }
   .footer-logo { align-self: flex-start; }
   .footer-right {
-    gap: 60px;
+    gap: 64px;
     align-items: stretch;
     width: 100%;
   }
