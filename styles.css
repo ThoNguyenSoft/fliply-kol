@@ -1575,151 +1575,553 @@ a {
   }
 }
 
-@media (max-width: 768px) {
+/* ===== Mobile (Figma 393px pixel-perfect) ===== */
+@media (max-width: 767px) {
+  .flip-deco { display: none; }
+
   .header {
-    padding: 0 20px;
+    height: 112px;
+    padding: 56px 16px 8px;
+    background: linear-gradient(180deg, var(--grey-950) 0%, rgba(14, 14, 14, 0) 100%);
+    backdrop-filter: none;
+    align-items: flex-end;
   }
+  .header.scrolled {
+    background: linear-gradient(180deg, var(--grey-950) 0%, rgba(14, 14, 14, 0.9) 100%);
+    backdrop-filter: blur(12px);
+  }
+  .header-btn { display: none; }
+  .header .logo img { width: 92px; height: 32px; }
 
   .hero {
-    height: auto;
-    min-height: 600px;
+    height: 449px;
+    min-height: 449px;
+    overflow: hidden;
   }
-
+  .hero-bg-overlay {
+    background: radial-gradient(ellipse 50% 50% at 50% 30%, rgba(23, 0, 50, 0.3) 0%, rgba(11, 0, 25, 0.4) 60%, transparent 100%);
+  }
   .hero-content {
-    padding: 140px 20px 60px;
+    padding: 0 16px;
+    gap: 16px;
+    width: 100%;
+    max-width: 361px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, calc(-50% + 23.5px));
+    align-items: center;
   }
-
-  .hero-title {
-    font-size: 36px;
-  }
-
-  .hero-subtitle {
-    font-size: 16px;
-  }
-
-  .btn-primary span {
-    font-size: 24px;
-  }
-
-  .btn-primary {
-    padding: 14px 28px;
-  }
-
-  .why-section .section-title,
-  .you-get-header h2,
-  .audience-header h2,
-  .howitworks-title,
-  .formats-header h2,
-  .need-section h2 {
-    font-size: 28px;
-  }
-
-  .why-item-text {
-    font-size: 18px;
-  }
-
-  .need-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .need-item {
-    border-radius: 24px;
-    padding: 20px 24px;
-  }
-
-  .need-item span {
-    white-space: normal;
-  }
-
-  .cta-content h2 {
-    font-size: 36px;
-  }
-
-  .cta-section {
-    padding: 120px 24px;
-  }
-
-  .format-card {
+  .hero-title-group {
+    gap: 16px;
     width: 100%;
   }
-
-  .footer-links {
-    flex-wrap: wrap;
-  }
-
-  .footer-col {
-    width: calc(50% - 16px);
-  }
-
-  .footer-email-input {
+  .hero-title {
     font-size: 24px;
+    line-height: 120%;
+    width: 100%;
+    padding: 0;
+    max-width: 361px;
   }
-
-  .footer-email-row {
+  .hero-subtitle {
+    font-size: 14px;
+    line-height: 125%;
+    font-weight: 400;
+    display: flex;
     flex-direction: column;
   }
-
-  .howitworks-section .container,
-  .need-section .container {
-    padding: 80px 24px;
+  .hero-subtitle p { display: inline; }
+  .btn-hero {
+    width: 217px;
+    height: 35px;
+    padding: 8px 16px;
+  }
+  .btn-primary span {
+    font-size: 16px;
+    line-height: 120%;
   }
 
-  .step-text h3 {
+  .why-section {
+    padding: 24px 16px 40px;
+  }
+  .why-section .container {
+    padding: 0;
+    gap: 32px;
+    max-width: 361px;
+  }
+  .why-section .section-header { gap: 8px; }
+  .why-section .section-title {
     font-size: 20px;
+    line-height: 120%;
   }
-
-  .step-text p,
-  .check-item span,
-  .token-pill span,
-  .megapot-pill span,
-  .need-item span,
-  .format-card p,
   .why-section .section-subtitle {
     font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
   }
-}
-
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 28px;
+  .why-grid {
+    gap: 16px;
+    padding: 0 16px;
+  }
+  .why-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .why-item {
+    width: 100%;
+    gap: 16px;
+    border-radius: 0;
+  }
+  .why-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 99px;
+  }
+  .why-icon svg,
+  .why-icon img {
+    width: 24px;
+    height: 24px;
+  }
+  .why-item-text {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 125%;
   }
 
-  .hero-content {
-    padding: 140px 16px 48px;
-    gap: 40px;
+  .whatyouget-section {
+    padding: 0 16px;
+    backdrop-filter: none;
   }
+  .whatyouget-section .container {
+    padding: 0;
+    gap: 24px;
+    max-width: 361px;
+  }
+  .card-wrapper { width: 100%; }
 
-  .btn-primary span {
+  .you-get-card {
+    padding: 24px 0 32px;
+    gap: 32px;
+    min-height: 280px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .you-get-bg img {
+    width: 200%;
+    height: 200%;
+    top: -40%;
+    left: -50%;
+  }
+  .you-get-header {
+    padding: 0 24px;
+    justify-content: flex-start;
+  }
+  .you-get-header h2 {
     font-size: 20px;
+    line-height: 120%;
+  }
+  .you-get-body { gap: 16px; }
+  .token-pill {
+    margin: 0 12px;
+    padding: 12px;
+    gap: 8px;
+    width: auto;
+    max-width: calc(100% - 24px);
+  }
+  .token-pill .coin-icon {
+    width: 16px;
+    height: 16px;
+  }
+  .token-pill .coin-icon img {
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+  }
+  .token-pill span {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 100%;
+    white-space: normal;
+  }
+  .check-item {
+    padding: 0 24px;
+    gap: 8px;
+  }
+  .check-item span {
+    font-size: 16px;
+    line-height: 125%;
+    font-weight: 500;
   }
 
+  .audience-card {
+    padding: 24px 0 32px;
+    gap: 32px;
+    width: 100%;
+  }
+  .audience-header {
+    padding: 0 24px;
+    justify-content: center;
+  }
+  .audience-header h2 {
+    font-size: 20px;
+    line-height: 120%;
+    white-space: normal;
+    text-align: center;
+  }
+  .audience-body { gap: 16px; }
+  .megapot-pill {
+    margin: 0 12px;
+    padding: 12px;
+    gap: 8px;
+    width: auto;
+    max-width: calc(100% - 24px);
+  }
+  .megapot-pill span {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 100%;
+    white-space: normal;
+  }
+  .check-item-light span {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .howitworks-section {
+    padding: 40px 16px;
+  }
+  .howitworks-section .container {
+    padding: 0;
+    gap: 16px;
+    max-width: 361px;
+  }
+  .howitworks-title {
+    font-size: 20px;
+    line-height: 120%;
+  }
+  .howitworks-steps {
+    gap: 16px;
+  }
+
+  .step-card {
+    flex-direction: column;
+    padding: 16px;
+    gap: 0;
+    min-height: 218px;
+    align-items: center;
+    border-radius: 24px;
+  }
+  .step-content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+    flex: none;
+  }
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 120%;
+    flex-shrink: 0;
+  }
+  .step-text {
+    flex: 1;
+    gap: 8px;
+    width: auto;
+  }
+  .step-text h3 {
+    font-size: 16px;
+    line-height: 120%;
+  }
+  .step-text p {
+    font-size: 16px;
+    line-height: 125%;
+  }
+  .step-text p br { display: none; }
+
+  .step-illustration {
+    width: 157px;
+    height: 119px;
+    flex-shrink: 0;
+  }
+
+  .code-display {
+    padding: 14px 35px;
+    width: 157px;
+    height: 46px;
+    border-radius: 74.5px;
+  }
   .code-display .code-text {
-    font-size: 36px;
+    font-size: 24px;
+    line-height: 100%;
+  }
+  .sparkle-top-left {
+    left: 4px;
+    top: 2px;
+    width: 36px;
+    height: 36px;
+  }
+  .sparkle-bottom-right {
+    right: 4px;
+    bottom: 8px;
+    width: 26px;
+    height: 26px;
   }
 
-  .code-display,
   .share-display {
-    padding: 24px 48px;
+    padding: 14px 35px;
+    width: 157px;
+    height: 46px;
+    border-radius: 74.5px;
   }
-
   .share-display .code-text {
-    font-size: 28px;
+    font-size: 24px;
+    line-height: 100%;
+  }
+  .share-icon-float {
+    left: 97px;
+    top: 0;
+    width: 44px;
+    height: 44px;
   }
 
   .prediction-card {
-    width: 220px;
-    transform: scale(0.9);
+    width: 135.58px;
+    height: 76.86px;
+    padding: 0 0 6px;
+    gap: 6px;
+    border-radius: 6.01px;
+    transform: none;
+  }
+  .prediction-teams { padding: 0 6px; }
+  .prediction-teams-inner {
+    padding: 6px 0;
+    border-radius: 6.01px;
+  }
+  .team-logo {
+    width: 24px;
+    height: 24px;
+  }
+  .team-name {
+    font-size: 5.26px;
+    line-height: 125%;
+  }
+  .vs-text {
+    font-size: 9.01px;
+    line-height: 120%;
+    width: 24px;
+  }
+  .prediction-buttons {
+    gap: 3px;
+    padding: 0 6px;
+  }
+  .pred-btn {
+    padding: 3.76px 6.01px;
+    height: 18.03px;
+    border-radius: 37.18px;
+    border-width: 0.75px;
+  }
+  .pred-btn-label {
+    font-size: 6.01px;
+    line-height: 125%;
+  }
+  .pred-btn-pts {
+    font-size: 5.26px;
+    line-height: 125%;
+  }
+  .cursor-deco {
+    right: 0;
+    bottom: 2px;
+    width: 30px;
+    height: 30px;
   }
 
-  .footer-email-input {
+  .step-illustration-4 { overflow: hidden; }
+  .trophy-display {
+    width: 157px;
+    height: 119px;
+  }
+  .trophy-pedestal {
+    left: 6px;
+    bottom: 8px;
+    width: 145px;
+    height: 52px;
+  }
+  .trophy-crown {
+    left: 50%;
+    top: 0;
+    width: 83px;
+    height: 83px;
+  }
+  .trophy-crown img {
+    width: 330%;
+    height: 220%;
+    margin-left: -10%;
+    margin-top: -58%;
+  }
+
+  .discover-link {
+    gap: 4px;
+  }
+  .discover-link span {
+    font-size: 16px;
+    line-height: 120%;
+    color: var(--grey-700);
+    text-decoration: underline;
+  }
+  .discover-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .formats-section {
+    padding: 40px 16px;
+  }
+  .formats-section .container {
+    padding: 0;
+    gap: 24px;
+    max-width: 361px;
+    align-items: stretch;
+  }
+  .formats-header {
+    gap: 8px;
+    max-width: 100%;
+  }
+  .formats-header h2 {
     font-size: 20px;
+    line-height: 120%;
+  }
+  .formats-header p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 125%;
+  }
+  .formats-grid {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 24px;
+  }
+  .format-card {
+    width: 100%;
+    padding: 16px;
+    gap: 4px;
+    border-radius: 8px;
+    align-items: center;
+  }
+  .format-card h3 {
+    font-size: 16px;
+    line-height: 120%;
+    text-align: center;
+  }
+  .format-card p {
+    font-size: 16px;
+    line-height: 125%;
+    font-weight: 400;
+    text-align: center;
   }
 
+  .need-section {
+    min-height: 448px;
+  }
+  .need-section .container {
+    padding: 64px 16px;
+    gap: 24px;
+    max-width: 100%;
+  }
+  .need-section h2 {
+    font-size: 20px;
+    line-height: 120%;
+  }
+  .need-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 361px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .need-item {
+    padding: 16px;
+    gap: 8px;
+    border-radius: 99px;
+    justify-content: center;
+  }
+  .need-item span {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 125%;
+    white-space: normal;
+  }
+
+  .cta-section {
+    padding: 80px 16px;
+    min-height: 306px;
+  }
+  .cta-bg {
+    width: 100%;
+    left: 0;
+    height: 229px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-180deg);
+  }
+  .cta-content {
+    gap: 24px;
+    max-width: 361px;
+  }
   .cta-content h2 {
-    font-size: 28px;
+    font-size: 24px;
+    line-height: 120%;
   }
 
-  .flip-deco {
-    display: none;
+  .footer {
+    padding: 32px 16px;
+    min-height: auto;
   }
+  .footer .container {
+    flex-direction: column;
+    gap: 32px;
+    padding: 0;
+    max-width: 361px;
+  }
+  .footer-logo { align-self: flex-start; }
+  .footer-right {
+    gap: 60px;
+    align-items: stretch;
+    width: 100%;
+  }
+  .footer-signup {
+    gap: 24px;
+  }
+  .footer-signup-label {
+    font-size: 16px;
+    line-height: 125%;
+  }
+  .footer-email-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .footer-email-input {
+    font-size: 24px;
+    line-height: 120%;
+  }
+  .footer-signup-btn {
+    width: 142px;
+    height: 40px;
+    padding: 0 24px;
+    align-self: flex-start;
+  }
+  .footer-signup-btn span { font-size: 20px; }
+  .footer-bottom { gap: 40px; }
+  .footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 48px;
+  }
+  .footer-col {
+    width: auto;
+    gap: 24px;
+  }
+  .footer-col:last-child { flex: none; }
 }
