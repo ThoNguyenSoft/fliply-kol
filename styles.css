@@ -1289,7 +1289,7 @@ a {
 .need-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(8px);
   z-index: 1;
 }
