@@ -265,8 +265,8 @@ a {
 }
 
 .btn-cta {
-  width: 482px;
-  height: 80px;
+  width: 341px;
+  height: 64px;
   max-width: 100%;
 }
 
@@ -279,7 +279,7 @@ a {
 }
 
 .btn-cta span {
-  font-size: 36px;
+  font-size: 24px;
 }
 
 /* ===== Decorative Flip Icons ===== */

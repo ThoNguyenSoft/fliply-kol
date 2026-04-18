@@ -204,7 +204,26 @@ function validateCurrent() {
 
   if (type === 'multi') {
     clearError();
-    const selected = Array.from(slide.querySelectorAll('.choice.is-selected')).map(c => c.dataset.value);
+    const selected = [];
+    let hasOtherError = false;
+    Array.from(slide.querySelectorAll('.choice.is-selected')).forEach(c => {
+      if (c.dataset.other === 'true') {
+        const otherInput = slide.querySelector('[data-other-input]');
+        const otherVal = (otherInput?.value || '').trim();
+        if (!otherVal) {
+          hasOtherError = true;
+          showError(slide, 'Please specify your answer.');
+          otherInput?.focus();
+        } else {
+          selected.push(`Other: ${otherVal}`);
+        }
+      } else {
+        selected.push(c.dataset.value);
+      }
+    });
+
+    if (hasOtherError) return false;
+
     if (selected.length === 0 && required) {
       showError(slide, 'Please select at least one option.');
       return false;
@@ -309,6 +328,16 @@ function handleChoiceClick(slide, choice, type) {
     }
   } else if (type === 'multi') {
     choice.classList.toggle('is-selected');
+    const otherInput = slide.querySelector('[data-other-input]');
+    if (otherInput && choice.dataset.other === 'true') {
+      if (choice.classList.contains('is-selected')) {
+        otherInput.hidden = false;
+        setTimeout(() => otherInput.focus(), 100);
+      } else {
+        otherInput.hidden = true;
+        otherInput.value = '';
+      }
+    }
   }
 }
 
@@ -412,7 +441,20 @@ function restoreAnswersToDom() {
     } else if (type === 'multi') {
       if (Array.isArray(val)) {
         slide.querySelectorAll('.choice').forEach(c => {
-          if (val.includes(c.dataset.value)) c.classList.add('is-selected');
+          const cv = c.dataset.value;
+          const isOther = c.dataset.other === 'true';
+          const isSelected = val.includes(cv) || (isOther && val.some(v => typeof v === 'string' && v.startsWith('Other:')));
+          if (isSelected) {
+            c.classList.add('is-selected');
+            if (isOther) {
+              const oi = slide.querySelector('[data-other-input]');
+              if (oi) {
+                oi.hidden = false;
+                const otherVal = val.find(v => typeof v === 'string' && v.startsWith('Other:'));
+                if (otherVal) oi.value = otherVal.replace(/^Other:\s*/, '');
+              }
+            }
+          }
         });
       }
     }
