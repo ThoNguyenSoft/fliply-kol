@@ -7,7 +7,7 @@
  */
 
 const CONFIG = {
-    endpoint: "https://dev-api.fliply.market/api/v1/captain-signups",
+    endpoint: "https://api.fliply.market/api/v1/captain-signups",
     storageKey: "fliply.signup.backup",
     draftKey: "fliply.signup.draft",
     source: "fliply-one-pager",
