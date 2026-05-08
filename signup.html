@@ -11,7 +11,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Manrope:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="signup.css?v=20260418a">
+  <link rel="stylesheet" href="signup.css?v=20260508b">
 </head>
 
 <body>
@@ -114,17 +114,91 @@
       </section>
 
       <!-- 3. Country -->
-      <section class="slide" data-key="country" data-type="text" data-required="true">
+      <section class="slide" data-key="country" data-type="single" data-required="true">
         <div class="slide-inner">
           <div class="q-num"><span>3</span><svg width="10" height="10" viewBox="0 0 10 10" fill="none"
               aria-hidden="true">
               <path d="M1 5H9M9 5L5 1M9 5L5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                 stroke-linejoin="round" />
             </svg></div>
-          <label class="q-title" for="q-country">Where are you based? <span class="q-required">*</span></label>
-          <p class="q-desc">Country or region.</p>
-          <input type="text" id="q-country" class="q-input" placeholder="e.g. United Kingdom"
-            autocomplete="country-name">
+          <h2 class="q-title">Where are you based? <span class="q-required">*</span></h2>
+          <p class="q-desc">Pick your country or region.</p>
+          <div class="choice-list region-choice-list" role="radiogroup" aria-label="Country or region">
+            <div class="region-group region-group-apac">
+              <h3 class="region-title">Asia-Pacific</h3>
+              <button type="button" class="choice choice-country" data-value="Thailand" role="radio"><span
+                  class="choice-key">A</span><span class="country-flag" aria-hidden="true">🇹🇭</span><span
+                  class="choice-label">Thailand</span><span class="choice-check"></span></button>
+              <button type="button" class="choice choice-country" data-value="Singapore" role="radio"><span
+                  class="choice-key">B</span><span class="country-flag" aria-hidden="true">🇸🇬</span><span
+                  class="choice-label">Singapore</span><span class="choice-check"></span></button>
+              <button type="button" class="choice choice-country" data-value="Philippines" role="radio"><span
+                  class="choice-key">C</span><span class="country-flag" aria-hidden="true">🇵🇭</span><span
+                  class="choice-label">Philippines</span><span class="choice-check"></span></button>
+              <button type="button" class="choice choice-country" data-value="Indonesia" role="radio"><span
+                  class="choice-key">D</span><span class="country-flag" aria-hidden="true">🇮🇩</span><span
+                  class="choice-label">Indonesia</span><span class="choice-check"></span></button>
+              <button type="button" class="choice choice-country" data-value="Malaysia" role="radio"><span
+                  class="choice-key">E</span><span class="country-flag" aria-hidden="true">🇲🇾</span><span
+                  class="choice-label">Malaysia</span><span class="choice-check"></span></button>
+              <button type="button" class="choice choice-country" data-value="South Korea" role="radio"><span
+                  class="choice-key">F</span><span class="country-flag" aria-hidden="true">🇰🇷</span><span
+                  class="choice-label">South Korea</span><span class="choice-check"></span></button>
+              <button type="button" class="choice choice-country" data-value="Japan" role="radio"><span
+                  class="choice-key">G</span><span class="country-flag" aria-hidden="true">🇯🇵</span><span
+                  class="choice-label">Japan</span><span class="choice-check"></span></button>
+              <button type="button" class="choice choice-country" data-value="India" role="radio"><span
+                  class="choice-key">H</span><span class="country-flag" aria-hidden="true">🇮🇳</span><span
+                  class="choice-label">India</span><span class="choice-check"></span></button>
+            </div>
+            <div class="region-group region-group-americas">
+              <h3 class="region-title">Americas</h3>
+              <button type="button" class="choice choice-country" data-value="USA" role="radio"><span
+                  class="choice-key">I</span><span class="country-flag" aria-hidden="true">🇺🇸</span><span
+                  class="choice-label">USA</span><span class="choice-check"></span></button>
+              <button type="button" class="choice choice-country" data-value="Brazil" role="radio"><span
+                  class="choice-key">J</span><span class="country-flag" aria-hidden="true">🇧🇷</span><span
+                  class="choice-label">Brazil</span><span class="choice-check"></span></button>
+              <button type="button" class="choice choice-country" data-value="Canada" role="radio"><span
+                  class="choice-key">K</span><span class="country-flag" aria-hidden="true">🇨🇦</span><span
+                  class="choice-label">Canada</span><span class="choice-check"></span></button>
+              <button type="button" class="choice choice-country" data-value="Argentina" role="radio"><span
+                  class="choice-key">L</span><span class="country-flag" aria-hidden="true">🇦🇷</span><span
+                  class="choice-label">Argentina</span><span class="choice-check"></span></button>
+            </div>
+            <div class="region-group region-group-emea">
+              <h3 class="region-title">EMEA</h3>
+              <button type="button" class="choice choice-country" data-value="UK" role="radio"><span
+                  class="choice-key">M</span><span class="country-flag" aria-hidden="true">🇬🇧</span><span
+                  class="choice-label">UK</span><span class="choice-check"></span></button>
+              <button type="button" class="choice choice-country" data-value="Turkey" role="radio"><span
+                  class="choice-key">N</span><span class="country-flag" aria-hidden="true">🇹🇷</span><span
+                  class="choice-label">Turkey</span><span class="choice-check"></span></button>
+              <button type="button" class="choice choice-country" data-value="UAE" role="radio"><span
+                  class="choice-key">O</span><span class="country-flag" aria-hidden="true">🇦🇪</span><span
+                  class="choice-label">UAE</span><span class="choice-check"></span></button>
+              <button type="button" class="choice choice-country" data-value="Germany" role="radio"><span
+                  class="choice-key">P</span><span class="country-flag" aria-hidden="true">🇩🇪</span><span
+                  class="choice-label">Germany</span><span class="choice-check"></span></button>
+              <button type="button" class="choice choice-country" data-value="France" role="radio"><span
+                  class="choice-key">Q</span><span class="country-flag" aria-hidden="true">🇫🇷</span><span
+                  class="choice-label">France</span><span class="choice-check"></span></button>
+            </div>
+            <div class="region-group region-group-others">
+              <h3 class="region-title">Others</h3>
+              <button type="button" class="choice choice-country" data-value="Nigeria" role="radio"><span
+                  class="choice-key">R</span><span class="country-flag" aria-hidden="true">🇳🇬</span><span
+                  class="choice-label">Nigeria</span><span class="choice-check"></span></button>
+              <button type="button" class="choice choice-country" data-value="Australia" role="radio"><span
+                  class="choice-key">S</span><span class="country-flag" aria-hidden="true">🇦🇺</span><span
+                  class="choice-label">Australia</span><span class="choice-check"></span></button>
+              <button type="button" class="choice choice-country" data-value="Other" data-other="true"
+                role="radio"><span class="choice-key">T</span><span class="country-flag" aria-hidden="true">🌍</span><span
+                  class="choice-label">Other</span><span class="choice-check"></span></button>
+            </div>
+          </div>
+          <input type="text" class="q-input q-input-other q-input-country-other"
+            placeholder="Please specify your country or region..." autocomplete="country-name" data-other-input hidden>
           <div class="q-error" aria-live="polite"></div>
           <div class="slide-footer">
             <button type="button" class="btn-next" data-action="next">
@@ -508,7 +582,7 @@
     </div>
 
   </div>
-  <script src="signup.js?v=20260418a" defer></script>
+  <script src="signup.js?v=20260508b" defer></script>
 </body>
 
 </html>
