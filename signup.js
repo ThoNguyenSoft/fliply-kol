@@ -49,6 +49,7 @@ function goTo(index, opts = {}) {
     }
 
     next.classList.add("is-active");
+    next.scrollTop = 0;
     state.current = index;
     updateProgress();
     updateNavButtons();
@@ -192,7 +193,10 @@ function validateCurrent() {
             const otherInput = slide.querySelector("[data-other-input]");
             const otherVal = (otherInput?.value || "").trim();
             if (!otherVal) {
-                showError(slide, "Please specify your platform.");
+                showError(
+                    slide,
+                    key === "country" ? "Please specify your country or region." : "Please specify your platform.",
+                );
                 otherInput?.focus();
                 return false;
             }

@@ -161,6 +161,31 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
 }
 
+.slide[data-key="country"] {
+  align-items: center;
+}
+
+.slide[data-key="country"] .slide-inner {
+  max-width: 980px;
+  padding: 10px 0 18px;
+}
+
+.slide[data-key="country"] .q-num {
+  margin-bottom: 10px;
+}
+
+.slide[data-key="country"] .q-title {
+  margin-bottom: 8px;
+}
+
+.slide[data-key="country"] .q-desc {
+  margin-bottom: 18px;
+}
+
+.slide[data-key="country"] .slide-footer {
+  margin-top: 20px;
+}
+
 /* ===== Welcome ===== */
 .slide-welcome .slide-inner {
   text-align: center;
@@ -340,6 +365,81 @@ a { color: inherit; text-decoration: none; }
   border-left: 2px solid var(--white);
   border-bottom: 2px solid var(--white);
   transform: translate(-50%, -65%) rotate(-45deg);
+}
+
+/* ===== Region picker ===== */
+.region-choice-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    "apac americas"
+    "others emea";
+  gap: 14px 20px;
+}
+
+.region-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.region-group-apac { grid-area: apac; }
+.region-group-americas { grid-area: americas; }
+.region-group-emea { grid-area: emea; }
+.region-group-others { grid-area: others; }
+
+.region-title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey-300);
+  margin: 0 0 1px;
+}
+
+.choice-country {
+  gap: 10px;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.choice-country .choice-key {
+  width: 20px;
+  height: 20px;
+  font-size: 11px;
+}
+
+.country-flag {
+  width: 20px;
+  flex-shrink: 0;
+  font-size: 16px;
+  line-height: 1;
+  text-align: center;
+}
+
+.choice-country .choice-label {
+  font-size: 14px;
+}
+
+.choice-country .choice-check {
+  width: 17px;
+  height: 17px;
+}
+
+.q-input-country-other {
+  max-width: 560px;
+}
+
+@media (min-width: 1100px) {
+  .region-choice-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      "apac americas emea"
+      "apac others emea";
+    align-items: start;
+  }
 }
 
 /* ===== Error message ===== */
@@ -535,6 +635,24 @@ a { color: inherit; text-decoration: none; }
   .choice-key { width: 24px; height: 24px; font-size: 12px; }
   .choice-label { font-size: 15px; }
   .choice-check { width: 20px; height: 20px; }
+  .slide[data-key="country"] {
+    align-items: flex-start;
+  }
+  .region-choice-list {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+    gap: 16px;
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+  }
+  .region-group-apac,
+  .region-group-americas,
+  .region-group-emea,
+  .region-group-others {
+    grid-area: auto;
+  }
+  .choice-country { padding: 12px 14px; }
   .btn-next { padding: 12px 22px; font-size: 15px; }
   .welcome-title { font-size: 40px; }
   .welcome-sub { font-size: 16px; margin-bottom: 32px; }
